@@ -13,3 +13,20 @@ export const showClearTextButton = () => {
     clear.classList.remove("flex");
   }
 };
+
+export const clearSearchText = (event) => {
+  event.preventDefault();
+  document.getElementById("search").value = "";
+  const clear = document.getElementById("clear");
+  clear.classList.add("none");
+  clear.classList.remove("flex");
+  setSearchFocus();
+};
+
+export const clearPushListener = (event) => {
+  // make sure Enter and Space aren't included in search results
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    document.getElementById("clear").click();
+  }
+};
