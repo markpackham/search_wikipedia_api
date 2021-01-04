@@ -33,7 +33,7 @@ const getMaxChars = () => {
   return maxChars;
 };
 
-const requestData = async (searchTerm) => {
+const requestData = async (searchString) => {
   try {
     const response = await fetch(searchString);
     const data = await response.json();
@@ -49,7 +49,7 @@ const processWikiResults = (results) => {
     const id = key;
     const title = results[key].title;
     const text = results[key].extract;
-    const image = results[key].hasOwnProperty("thumbnail")
+    const img = results[key].hasOwnProperty("thumbnail")
       ? results[key].thumbnail.source
       : null;
     const item = {
