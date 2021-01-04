@@ -19,7 +19,7 @@ export const buildSearchResults = (resultArray) => {
     const resultText = createResultText(result);
     resultContents.appendChild(resultText);
     resultItem.append(resultContents);
-    const searchResults = document.getElementsById("searchResults");
+    const searchResults = document.getElementById("searchResults");
     searchResults.append(resultItem);
   });
 };
